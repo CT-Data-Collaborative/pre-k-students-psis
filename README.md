@@ -4,6 +4,8 @@ Pre-K Students - PSIS
 
 The Pre-K Students - PSIS dataset presents the number of children in public pre-kindergarten programs by their district of attendance. 
 
+Data Source: <http://edsight.ct.gov/>
+
 ## License MIT
 
 ## Getting Setup
