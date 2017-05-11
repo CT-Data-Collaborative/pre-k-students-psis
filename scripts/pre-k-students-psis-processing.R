@@ -46,6 +46,9 @@ psis$Grade <- NULL
 psis$Variable <- "Pre-K Students"
 names(psis)[names(psis) == "Measure.Type"] <- "Measure Type"
 
+psis$FIPS <- as.character(psis$FIPS)
+psis[["FIPS"]][is.na(psis[["FIPS"]])] <- ""
+
 #Write CSV
 write.table(
   psis,
