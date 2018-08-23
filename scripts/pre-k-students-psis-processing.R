@@ -33,7 +33,7 @@ student_enroll <- read.csv(text = path_to_student_enroll)
 #Save student enrollment data set to raw folder
 write.table(
   student_enroll,
-  file.path(path_to_raw_data, "student_enrollment_by_grade_2008-2016.csv"),
+  file.path(path_to_raw_data, "student_enrollment_by_grade_2008-2018.csv"),
   sep = ",",
   row.names = F
 )
@@ -51,7 +51,7 @@ psis[["FIPS"]][is.na(psis[["FIPS"]])] <- ""
 #Write CSV
 write.table(
   psis,
-  file.path(getwd(), "data", "pre-k-students-psis_2008-2017.csv"),
+  file.path(getwd(), "data", "pre-k-students-psis_2008-2018.csv"),
   sep = ",",
   row.names = F
 )

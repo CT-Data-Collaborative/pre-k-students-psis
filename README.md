@@ -1,7 +1,5 @@
 Pre-K Students - PSIS
 
-[![Build Status](https://travis-ci.org/CT-Data-Collaborative/pre-k-students-psis.svg?branch=master)](https://travis-ci.org/CT-Data-Collaborative/pre-k-students-psis)
-
 The Pre-K Students - PSIS dataset presents the number of children in public pre-kindergarten programs by their district of attendance. 
 
 Data Source: <http://edsight.ct.gov/>
