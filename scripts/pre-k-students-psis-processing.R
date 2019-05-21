@@ -23,7 +23,9 @@ path_to_raw_data <- (paste0(getwd(), "/", data_location))
 req <- GET("https://api.github.com/repos/CT-Data-Collaborative/student-enrollment-by-grade/git/trees/master?recursive=1")
 stop_for_status(req)
 filelist <- unlist(lapply(content(req)$tree, "[", "path"), use.names = F)
-student_enrollment_csvs <- grep("data/student", filelist, value = TRUE, fixed = TRUE)
+# - corredted by ilya: only get the last file on the list ([-1])
+student_enrollment_csvs <- grep("data/student", filelist, value = TRUE, fixed = TRUE)[-1]
+
 
 #Bring all student enrollment files into R
 url <- paste0("https://raw.githubusercontent.com/CT-Data-Collaborative/student-enrollment-by-grade/master/", student_enrollment_csvs)
@@ -33,7 +35,7 @@ student_enroll <- read.csv(text = path_to_student_enroll)
 #Save student enrollment data set to raw folder
 write.table(
   student_enroll,
-  file.path(path_to_raw_data, "student_enrollment_by_grade_2008-2018.csv"),
+  file.path(path_to_raw_data, "student_enrollment_by_grade_2008-2019.csv"),
   sep = ",",
   row.names = F
 )
@@ -51,7 +53,7 @@ psis[["FIPS"]][is.na(psis[["FIPS"]])] <- ""
 #Write CSV
 write.table(
   psis,
-  file.path(getwd(), "data", "pre-k-students-psis_2008-2018.csv"),
+  file.path(getwd(), "data", "pre-k-students-psis_2008-2019.csv"),
   sep = ",",
   row.names = F
 )
